@@ -3,6 +3,7 @@ ZIP_URL = "https://github.com/projectblacklight/blacklight-jetty/archive/v4.0.0.
 require 'jettywrapper'
 require 'engine_cart/rake_task'
 
+desc "Run test suite"
 task :ci => 'jetty:clean' do
   ENV['environment'] = "test"
   jetty_params = Jettywrapper.load_config
