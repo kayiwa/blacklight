@@ -14,7 +14,7 @@ group :test do
   gem 'rspec-rails', '~> 2.13'
   gem 'generator_spec'
   gem 'poltergeist'
-  gem 'blacklight_marc'
+  gem 'blacklight_marc', '0.0.2'
   if defined? :JRUBY_VERSION
     gem 'capybara', '~> 1.0'
   else

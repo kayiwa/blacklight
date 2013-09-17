@@ -62,12 +62,12 @@ Thank you for Installing Blacklight.
   
   # TODO
   # def generate_stub_catalog_controller
-  ## see blacklight:marc generator
+  ## see blacklight_marc:marc generator
   ##copy_file "catalog_controller.rb", "app/controllers/catalog_controller.rb"
   #end 
 
   def generate_blacklight_marc_demo
-    generate 'blacklight:marc'
+    generate 'blacklight_marc:marc'
   end
 
   def inject_blacklight_routes
