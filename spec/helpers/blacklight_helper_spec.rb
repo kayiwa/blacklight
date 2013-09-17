@@ -1,7 +1,5 @@
-#ste -*- encoding : utf-8 -*-
-# -*- coding: UTF-8 -*-
+# -*- encoding : utf-8 -*-
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
-require 'marc'
 def exportable_record
 "<record>
   <leader>01828cjm a2200409 a 4500</leader>
