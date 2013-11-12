@@ -1,7 +1,4 @@
 # -*- encoding : utf-8 -*-
-# lib/blacklight/engine.rb
-require "blacklight"
-require "rails"
 
 module Blacklight
   class Engine < Rails::Engine
