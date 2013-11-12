@@ -1,21 +1,19 @@
 # -*- encoding : utf-8 -*-
-require File.expand_path(File.dirname(__FILE__) + '/../../spec_helper')
+require 'spec_helper'
 
 # spec for default partial to display solr document fields 
-#  in catalog show view
+#  in catalog INDEX view
 
-describe "/catalog/_show_default.html.erb" do
-  
+describe "/catalog/_index_default.erb" do
   include BlacklightHelper
   include CatalogHelper
 
-
   before(:each) do
-     @config = Blacklight::Configuration.new do |config|
+    @config = Blacklight::Configuration.new do |config|
       config.show.display_type = 'asdf'
-      config.add_show_field 'one_field', :label => 'One:'
-      config.add_show_field 'empty_field', :label => 'Three:'
-      config.add_show_field 'four_field', :label => 'Four:'
+      config.add_index_field 'one_field', :label => 'One:'
+      config.add_index_field 'empty_field', :label => 'Three:'
+      config.add_index_field 'four_field', :label => 'Four:'
     end
 
     @fname_1 = "one_field"
@@ -29,21 +27,21 @@ describe "/catalog/_show_default.html.erb" do
     @document.stub(:get).with(@fname_3, hash_including(:sep => nil)).and_return(nil)
     @document.stub(:get).with(@fname_4, hash_including(:sep => nil)).and_return("val_4")
     
-    @document.stub(:'has?').with(@fname_1).and_return(true)
-    @document.stub(:'has?').with(@fname_2).and_return(true)
-    @document.stub(:'has?').with(@fname_3).and_return(false)
-    @document.stub(:'has?').with(@fname_4).and_return(true)
+    @document.stub(:has?).with(@fname_1).and_return(true)
+    @document.stub(:has?).with(@fname_2).and_return(true)
+    @document.stub(:has?).with(@fname_3).and_return(false)
+    @document.stub(:has?).with(@fname_4).and_return(true)
     
     # cover any remaining fields in initalizer
     @document.stub(:[])
     
     @flabel_1 = "One:"
-    @flabel_3 = "Two:"
+    @flabel_3 = "Three:"
     @flabel_4 = "Four:"
 
     view.stub(:blacklight_config).and_return(@config)
     assigns[:document] = @document
-    @rendered = view.render_document_partial @document, :show
+    @rendered = view.render_document_partial @document, :index
   end
 
   it "should only display fields listed in the initializer" do
