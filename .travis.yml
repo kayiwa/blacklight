@@ -15,4 +15,6 @@ notifications:
   email:
       - blacklight-commits@googlegroups.com
 
-env: JRUBY_OPTS="-J-Xms512m -J-Xmx1024m"        
+env:
+  - JRUBY_OPTS="-J-Xms512m -J-Xmx1024m" CURRENT_ENGINE_NAME=blacklight_bootstrap2
+  - JRUBY_OPTS="-J-Xms512m -J-Xmx1024m" CURRENT_ENGINE_NAME=blacklight_bootstrap3

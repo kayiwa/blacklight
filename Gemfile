@@ -3,7 +3,6 @@ source 'http://rubygems.org'
 # Please see blacklight.gemspec for dependency information.
 gemspec
 
-gem 'blacklight-bootstrap2', path: './blacklight-bootstrap2'
 gem 'blacklight-core', path: './blacklight-core'
 
 gem 'simplecov', :platform => :mri

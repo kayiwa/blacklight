@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency "nokogiri",  "~>1.6"     # XML Parser
   # Let's allow future versions of marc, count on
   # them to be backwards compat until 1.1
+  s.add_dependency "kaminari", "~> 0.13"  # the pagination (page 1,2,3, etc..) of our search results
   s.add_dependency "marc",      ">= 0.4.3", "< 1.1"  # Marc record parser.
   s.add_dependency "rsolr",     "~> 1.0.6"  # Library for interacting with rSolr.
   s.add_development_dependency "jettywrapper", ">= 1.4.1"
