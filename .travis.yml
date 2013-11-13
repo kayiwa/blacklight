@@ -2,12 +2,12 @@ notifications:
   email: false
 
 rvm:
-  - 1.9.3
-  - jruby-19mode
+  #- 1.9.3
+  #- jruby-19mode
   - 2.0.0
 
 gemfile:
-  - gemfiles/rails3.gemfile
+  #  - gemfiles/rails3.gemfile
   - gemfiles/rails4.gemfile
 
 notifications:
@@ -16,5 +16,8 @@ notifications:
       - blacklight-commits@googlegroups.com
 
 env:
-  - JRUBY_OPTS="-J-Xms512m -J-Xmx1024m" CURRENT_ENGINE_NAME=blacklight_bootstrap2
-  - JRUBY_OPTS="-J-Xms512m -J-Xmx1024m" CURRENT_ENGINE_NAME=blacklight_bootstrap3
+  global:
+    - JRUBY_OPTS="-J-Xms512m -J-Xmx1024m"
+  matrix:
+    - CURRENT_ENGINE_NAME=blacklight-bootstrap2
+    - CURRENT_ENGINE_NAME=blacklight-bootstrap3
