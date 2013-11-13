@@ -18,6 +18,7 @@ notifications:
 env:
   global:
     - JRUBY_OPTS="-J-Xms512m -J-Xmx1024m"
+    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
   matrix:
     - CURRENT_ENGINE_NAME=blacklight-bootstrap2
     - CURRENT_ENGINE_NAME=blacklight-bootstrap3
