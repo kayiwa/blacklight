@@ -18,8 +18,7 @@
 //= require bootstrap/transition
 //= require bootstrap/collapse
 //= require bootstrap/alert
-//= require improved-modal/bootstrap-modalmanager.js
-//= require improved-modal/bootstrap-modal.js
+//= require bootstrap/modal
 
 /* Blacklight has a Javascript setup meant to support local disabling, 
   modification, and use of Blacklight behaviors. 
